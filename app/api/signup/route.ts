@@ -18,7 +18,7 @@ export async function POST(request: Request) {
             return new NextResponse("Email is already taken", {status: 400});
         };
 
-        const hashedPassword = bcrypt.hash(password, 12);
+        const hashedPassword = await bcrypt.hash(password, 12);
 
         const user = await prisma.user.create({
             data: {
