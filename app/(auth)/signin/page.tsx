@@ -7,7 +7,6 @@ import {
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -129,13 +128,7 @@ export default function LoginPage() {
             }
             className="w-full flex justify-center py-2.5 px-4 border border-zinc-300 rounded-md bg-white text-sm font-medium text-zinc-700 hover:bg-zinc-50 transition-colors"
           >
-            <Image
-            width={15}
-            height={15}
-              src="/google-icon.svg"
-              alt="Google"
-              className="h-5 w-5 mr-2"
-            />
+            
             Continue with Google
           </button>
         </div>
