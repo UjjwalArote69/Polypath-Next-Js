@@ -46,3 +46,14 @@ export async function registerUser(formData: FormData): Promise<ActionResponse> 
     return { success: false, error: "An internal error occurred." };
   }
 }
+
+export async function loginUser(formData:FormData) {
+  const email = formData.get('email') as string;
+  const password = formData.get('password') as string;
+
+  if (!email || !password) {
+    return {success: false, error: "Please provide email and password"}
+  }
+
+  return {success: true, data: {email,password}};
+}
